@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const environmentFilename = "environment.json";
-const sourcePath = "workspaces";
+const sourcePath = "src";
 const buildPath = "build";
 const entryFilename = "entry.js";
 const scriptFilename = "app-bundle.js";
