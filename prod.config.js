@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const environmentFilename = "environment.json";
 const sourcePath = "workspaces";
+const buildPath = "build";
 const entryFilename = "entry.js";
 const scriptFilename = "app-bundle.js";
 const styleFilename = "app-bundle.css";
@@ -15,7 +16,7 @@ const resourceSizeLimit = 20 * 1024;
 
 module.exports = env =>
 {
-    var appEntry = { };
+    var appEntry = {};
     var envFile = fs.readFileSync(environmentFilename, 'utf8');
     var envData = JSON.parse(envFile);
 
@@ -30,7 +31,7 @@ module.exports = env =>
         mode: "production",
         output:
         {
-            path: path.resolve(__dirname, sourcePath),
+            path: path.resolve(__dirname, buildPath),
             filename: `[name]/dist/${scriptFilename}`
         },
         optimization:
