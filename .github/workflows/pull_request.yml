@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
+  pr_test:
     runs-on: ubuntu-latest
 
     strategy:
