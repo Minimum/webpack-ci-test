@@ -1,0 +1,32 @@
+name: Pull Request Check
+
+on:
+  pull_request:
+    types: [ opened, reopened ]
+    branches: [ "master", "dev" ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build assets
+      run: |
+        npm install
+        npm run build_dev
