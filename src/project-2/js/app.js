@@ -1,0 +1,3 @@
+window.testApp = {
+    someValue: "perhaps"
+}

@@ -1,3 +1,4 @@
+import './js/app.js'
 import './js/page-1.js'
 import './js/page-2.js'
 import './css/page-1.css'

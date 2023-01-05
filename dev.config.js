@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const environmentFilename = "environment.json";
-const sourcePath = "workspaces";
+const sourcePath = "src";
+const buildPath = "build";
 const entryFilename = "entry.js";
 const scriptFilename = "app-bundle.js";
 const styleFilename = "app-bundle.css";
@@ -30,7 +31,7 @@ module.exports = env =>
         mode: "development",
         output:
         {
-            path: path.resolve(__dirname, sourcePath),
+            path: path.resolve(__dirname, buildPath),
             filename: `[name]/dist/${scriptFilename}`
         },
         optimization:
