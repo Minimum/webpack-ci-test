@@ -1,4 +1,4 @@
 window.sampleApp = {
-    pages: []
-    syntax error
+    pages: [],
+    error_msg : "syntax error"
 };
