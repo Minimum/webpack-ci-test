@@ -2,12 +2,7 @@ name: Pull Request Check
 
 on:
   pull_request:
-    types: [ opened, reopened ]
     branches: [ "master", "dev" ]
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build:
