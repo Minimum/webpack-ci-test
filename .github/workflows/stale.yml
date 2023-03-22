@@ -1,0 +1,25 @@
+name: "Monitor stale issues/PRs"
+on:
+  repository_dispatch:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/stale@v7.0.0
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        stale-issue-message: 'Issue has had no updates in a week, please reply within the next 3 weeks.'
+        close-issue-message: 'Issue has had no updates in 4 weeks.'
+        stale-issue-label: 'stale-issue'
+        close-issue-label: 'rotten-issue'
+        exempt-issue-labels: 'eternal-issue'
+        stale-pr-message: 'PR has had no updates in a week, please reply within the next 3 weeks.'
+        close-pr-message: 'PR has had no updates in 4 weeks.'
+        stale-pr-label: 'stale-pr'
+        close-pr-label: 'rotten-pr'
+        exempt-pr-labels: 'eternal-pr'
+        days-before-stale: 7
+        days-before-close: 28
