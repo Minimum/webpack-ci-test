@@ -10,7 +10,7 @@
         "svg-url-loader": "^7.1.1",
         "terser-webpack-plugin": "^5.3.6",
         "url-loader": "^4.1.1",
-        "webpack": "^5.75.0"
+        "webpack": "^5.76.0"
     },
     "devDependencies": {
         "webpack-cli": "^4.10.0"
